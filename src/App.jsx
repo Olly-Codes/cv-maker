@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Preview } from "./components/Preview";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -47,40 +48,10 @@ function App() {
     <>
     {isSubmitted ? (
       <>
-        <div className="cv-container">
-          <section className="general-section-submitted">
-            <p>General Information</p>
-            <p>Name: {userData.name}</p>
-            <p>Email: {userData.email}</p>
-            <p>Number: {userData.number}</p>
-          </section>
-
-          <section className="education-section-submitted">
-            <p>Educational Experience</p>
-            <p>Institution Name: {userData.institutionName}</p>
-            <p>Degree Name: {userData.degreeName}</p>
-            <p>Graduation Date: {userData.graduationDate}</p>
-          </section>
-
-          <section className="practical-section-submitted">
-            <p>Practical Experince</p>
-            <p>Company Name: {userData.companyName}</p>
-            <p>Position Title: {userData.positionTitle}</p>
-            <p>Main Responsibilities</p>
-            <ul>
-              {userData.mainResponsibilities.map(responsibility => {
-                return <li key={responsibility}>{responsibility}</li>
-              })}
-            </ul>
-
-            <p>Duration of Employment:</p>
-            <p>From: {userData.fromDate} Till: {userData.toDate}</p>
-          </section>
-
-          <div className="button-wrapper-submitted">
-            <button onClick={handleEdit} type="button">Edit</button>
-          </div>
-        </div>
+        <Preview
+          user={userData}
+          handleEdit={handleEdit}
+        />
       </>
     ) : (
     <>
