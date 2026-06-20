@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Preview } from "./components/Preview";
-import { Form } from "./components/Form";
+import { Preview } from "./components/Preview.jsx";
+import { Form } from "./components/Form.jsx";
 import "./styles/styles.css";
 
 function App() {

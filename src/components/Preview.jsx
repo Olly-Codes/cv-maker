@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { Divider } from "./Divider"
+import { Divider } from "./Divider.jsx"
 
 export function Preview({ user, handleEdit }) {
     return (
