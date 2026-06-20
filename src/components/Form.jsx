@@ -1,3 +1,4 @@
+import { FormSection } from "./FormSection";
 import { InputField } from "./inputField";
 
 export function Form({ user, handleChange, handleSubmit }) {
@@ -5,9 +6,7 @@ export function Form({ user, handleChange, handleSubmit }) {
         <>
             <h1>CV Maker</h1>
             <form className="cv-form">
-                <section className="form-row general-section section">
-                    <p>General Information</p>
-
+                <FormSection title="General Information">
                     <InputField 
                         id="name"
                         label="Name:"
@@ -40,11 +39,9 @@ export function Form({ user, handleChange, handleSubmit }) {
                         onChange={handleChange}
                         required={true}
                     />
-                </section>
+                </FormSection>
 
-                <section className="form-row education-section section">
-                    <p>Educational Experience</p>
-
+                <FormSection title="Educational Experience">
                     <InputField 
                         id="institutionName"
                         label="institution Name:"
@@ -76,11 +73,9 @@ export function Form({ user, handleChange, handleSubmit }) {
                         onChange={handleChange}
                         required={false}
                     />
-                </section>
+                </FormSection>
 
-                <section className="form-row practical-section section">
-                    <p>Practical Experience</p>
-
+                <FormSection title="Practical Experience">
                     <InputField 
                         id="companyName"
                         label="Company Name:"
@@ -111,9 +106,9 @@ export function Form({ user, handleChange, handleSubmit }) {
                         placeholder="Managing employees, Manage Stock (separate responsibilities with a comma)"
                         onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
+                </FormSection>
 
-                    <p>Duraion of employment:</p>
-
+                <FormSection title="Duration of Employment">
                     <InputField 
                         id="fromDate"
                         label="From:"
@@ -133,7 +128,7 @@ export function Form({ user, handleChange, handleSubmit }) {
                         onChange={handleChange}
                         required={false}
                     />
-                </section>
+                </FormSection>
 
                 <div className="button-wrapper">
                     <button onClick={handleSubmit} type="submit">Submit</button>
