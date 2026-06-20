@@ -12,7 +12,7 @@ function App() {
       graduationDate: "",
       companyName: "",
       positionTitle: "",
-      mainResponsibilities: [],
+      mainResponsibilities: "",
       fromDate: "",
       toDate: ""
     }
@@ -20,24 +20,24 @@ function App() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  function handleChange(name, value) {
+  function handleTrim() {
+    const responsibilities = userData.mainResponsibilities.split(",")
+    .map(responsibility => responsibility.trim())
 
-    if (name === "mainResponsibilities") {
-      const responsibilities = value.split(",")
-      .map((responsibility) => responsibility.trim())
-      
-      setUserData(currentUser => {
-        return { ...currentUser, [name]: [...responsibilities]}
-      })
-    } else {
+    setUserData(currentUser => {
+      return { ...currentUser, mainResponsibilities: [...responsibilities] }
+    })
+  }
+
+  function handleChange(name, value) {
       setUserData((currentUser) => {
         return { ...currentUser, [name]: value }
       })
-    }
   }
 
   function handleSubmit(e) {
     e.preventDefault();
+    handleTrim();
     setIsSubmitted(true);
   }
 
