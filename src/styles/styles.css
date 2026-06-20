@@ -168,3 +168,10 @@ label {
 .duration-wrapper .date {
     color: var(--color-text-secondary);
 }
+
+@media only screen and (max-width: 768px) {
+    .cv-form, .cv-container-submitted {
+        width: 90%;
+        padding: 30px;
+    }
+}
