@@ -1,3 +1,5 @@
+import { InputField } from "./inputField";
+
 export function Form({ user, handleChange, handleSubmit }) {
     return (
         <>
@@ -5,92 +7,100 @@ export function Form({ user, handleChange, handleSubmit }) {
             <form className="cv-form">
                 <section className="form-row general-section section">
                     <p>General Information</p>
-                    <label htmlFor="name">Name:</label>
-                    <input 
-                        type="text"
-                        value={user.name}
-                        name="name"
+
+                    <InputField 
                         id="name"
+                        label="Name:"
+                        type="text"
+                        name="name"
+                        value={user.name}
                         placeholder="John"
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
-                        required
+                        onChange={handleChange}
+                        required={true}
                     />
 
-                    <label htmlFor="email">Email:</label>
-                    <input 
-                        type="email"
-                        value={user.email}
-                        name="email"
+                    <InputField 
                         id="email"
+                        label="Email:"
+                        type="email"
+                        name="email"
+                        value={user.email}
                         placeholder="john@example.com"
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
-                        required
+                        onChange={handleChange}
+                        required={true}
                     />
 
-                    <label htmlFor="number">Number:</label>
-                    <input 
-                        type="tel"
-                        value={user.number}
-                        name="number"
+                    <InputField 
                         id="number"
-                        placeholder="+27 000 000 0000"
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
-                        required
+                        label="Number:"
+                        type="tel"
+                        name="number"
+                        value={user.number}
+                        placeholder="+27 000 000 000"
+                        onChange={handleChange}
+                        required={true}
                     />
                 </section>
 
                 <section className="form-row education-section section">
                     <p>Educational Experience</p>
-                    <label htmlFor="institutionName">Institute Name:</label>
-                    <input 
-                        type="text"
-                        value={user.institutionName}
-                        name="institutionName"
+
+                    <InputField 
                         id="institutionName"
-                        placeholder="University" 
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
-                    />
-
-                    <label htmlFor="degreeName">Degree:</label>
-                    <input 
+                        label="institution Name:"
                         type="text"
-                        value={user.degreeName}
-                        name="degreeName"
-                        id="degreeName"
-                        placeholder="Computer Sciences" 
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
+                        name="institutionName"
+                        value={user.institutionName}
+                        placeholder="University of place"
+                        onChange={handleChange}
+                        required={false}
                     />
 
-                    <label htmlFor="graduationDate">Graduation Date:</label>
-                    <input 
-                        type="date"
-                        value={user.graduationDate}
-                        name="graduationDate"
+                    <InputField 
+                        id="degreeName"
+                        label="Degree:"
+                        type="text"
+                        name="degreeName"
+                        value={user.degreeName}
+                        placeholder="Computer Sciences"
+                        onChange={handleChange}
+                        required={false}
+                    />
+
+                    <InputField 
                         id="graduationDate"
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
+                        label="Graduation Date:"
+                        type="date"
+                        name="graduationDate"
+                        value={user.graduationDate}
+                        onChange={handleChange}
+                        required={false}
                     />
                 </section>
 
                 <section className="form-row practical-section section">
                     <p>Practical Experience</p>
-                    <label htmlFor="companyName">Company Name:</label>
-                    <input 
-                        type="text"
-                        value={user.companyName}
-                        name="companyName"
+
+                    <InputField 
                         id="companyName"
-                        placeholder="John's Company"
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
+                        label="Company Name:"
+                        type="text"
+                        name="companyName"
+                        value={user.companyName}
+                        placeholder="John's Diner"
+                        onChange={handleChange}
+                        required={false}
                     />
 
-                    <label htmlFor="positionTitle">Position Title:</label>
-                    <input 
-                        type="text"
-                        value={user.positionTitle}
-                        name="positionTitle"
+                    <InputField 
                         id="positionTitle"
+                        label="Position Title:"
+                        type="text"
+                        name="positionTitle"
+                        value={user.positionTitle}
                         placeholder="Manager"
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
+                        onChange={handleChange}
+                        required={false}
                     />
 
                     <label htmlFor="mainResponsibilities">Main Responsibilities:</label>
@@ -103,22 +113,25 @@ export function Form({ user, handleChange, handleSubmit }) {
                     />
 
                     <p>Duraion of employment:</p>
-                    <label htmlFor="fromDate">From:</label>
-                    <input 
-                        type="date"
-                        value={user.fromDate}
-                        name="fromDate"
+
+                    <InputField 
                         id="fromDate"
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
+                        label="From:"
+                        type="date"
+                        name="fromDate"
+                        value={user.fromDate}
+                        onChange={handleChange}
+                        required={false}
                     />
 
-                    <label htmlFor="toDate">Till:</label>
-                    <input 
+                    <InputField 
+                        id="toDate"
+                        label="Till:"
                         type="date"
-                        value={user.toDate}
                         name="toDate"
-                        id="toDate" 
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
+                        value={user.toDate}
+                        onChange={handleChange}
+                        required={false}
                     />
                 </section>
 
