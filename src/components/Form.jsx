@@ -1,5 +1,5 @@
 import { FormSection } from "./FormSection.jsx";
-import { InputField } from "./inputField.jsx";
+import { InputField } from "./InputField.jsx";
 import { TextAreaField } from "./TextAreaField.jsx";
 
 export function Form({ user, handleChange, handleSubmit }) {
