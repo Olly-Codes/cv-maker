@@ -43,6 +43,11 @@ function App() {
   }
 
   function handleEdit(e) {
+    setUserData(currentUser => {
+      return { 
+        ...currentUser, 
+        mainResponsibilities: currentUser.mainResponsibilities.join(", ") }
+    })
     setIsSubmitted(false);
   }
 
