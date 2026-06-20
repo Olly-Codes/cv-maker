@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { Divider } from "./Divider"
 
 export function Preview({ user, handleEdit }) {
@@ -20,7 +21,7 @@ export function Preview({ user, handleEdit }) {
                     <p className="title-submitted">Educational Experience</p>
                     <div className="degree-uni-wrapper">
                         <p>{user.degreeName}</p>
-                        <p>{user.institutionName} - {user.graduationDate}</p>
+                        <p>{user.institutionName} - {user.graduationDate ? format(user.graduationDate, "MMMM yyyy") : "-"}</p>
                     </div>
                 </section>
 
@@ -40,7 +41,7 @@ export function Preview({ user, handleEdit }) {
 
                     <div className="duration-wrapper">
                         <p className="title-submitted">Duration</p>
-                        <p className="date">{user.fromDate} - {user.toDate}</p>
+                        <p className="date">{user.fromDate ? format(user.fromDate, "MMM yyyy") : "-"} - {user.toDate ? format(user.toDate, "MMM yyyy") : "-"}</p>
                     </div>
                 </section>
             </div>
