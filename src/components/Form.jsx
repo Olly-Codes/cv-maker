@@ -1,5 +1,6 @@
 import { FormSection } from "./FormSection";
 import { InputField } from "./inputField";
+import { TextAreaField } from "./TextAreaField";
 
 export function Form({ user, handleChange, handleSubmit }) {
     return (
@@ -98,13 +99,13 @@ export function Form({ user, handleChange, handleSubmit }) {
                         required={false}
                     />
 
-                    <label htmlFor="mainResponsibilities">Main Responsibilities:</label>
-                    <textarea 
+                    <TextAreaField 
+                        id="mainResponsibilities"
+                        label="Main Responsibilities:"
                         name="mainResponsibilities"
                         value={user.mainResponsibilities}
-                        id="mainResponsibilities"
-                        placeholder="Managing employees, Manage Stock (separate responsibilities with a comma)"
-                        onChange={(e) => handleChange(e.target.name, e.target.value)}
+                        placeholder="Please separate responsibilities with commas (e.g. cleaning, serving)"
+                        onChange={handleChange} 
                     />
                 </FormSection>
 
