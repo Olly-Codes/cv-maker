@@ -2,7 +2,7 @@ export function FormSection({ title, children }) {
     return (
         <>
             <section className="form-row section">
-                <p>{title}</p>
+                <p className="title">{title}</p>
                 {children}
             </section>
         </>

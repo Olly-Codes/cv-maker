@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Preview } from "./components/Preview";
 import { Form } from "./components/Form";
+import "./styles/styles.css";
 
 function App() {
   const [userData, setUserData] = useState({
