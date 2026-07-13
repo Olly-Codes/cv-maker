@@ -1,7 +1,7 @@
 # CV Maker
 A small react application that let's users fill in thier general, educational and work experience details and generates a readable CV preview.
 <br>
-Live Preview: https://cv-maker-pied-pi.vercel.app/
+Live Preview: offline
 
 ## Overview
 CV Maker allows users to input their general information, educational experience and pracitcal experience into a form. On submission, the data is rendered as a formatted CV preview, which can be edited again at any point to update any missing details.
